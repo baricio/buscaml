@@ -7,9 +7,19 @@
     tools:context="com.baricio.buscaml.SplashActivity">
 
     <ImageView
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:src="@drawable/logo_filter"
+        android:layout_width="300dp"
+        android:layout_height="145dp"
+        android:src="@drawable/busca"
         android:layout_centerInParent="true"
         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/app_name"
+        android:textSize="16dp"
+        />
+
 </RelativeLayout>

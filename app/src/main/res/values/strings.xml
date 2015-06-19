@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">BuscaML</string>
+    <string name="app_name">Busca Mercado Livre</string>
 
-    <string name="hello_world">Hello world!</string>
+    <string name="developer">Baricio Software</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_splash">SplashActivity</string>
 </resources>
