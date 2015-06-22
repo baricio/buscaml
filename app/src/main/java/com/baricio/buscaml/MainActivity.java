@@ -48,9 +48,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 if (toPaginacao != null) {
 
-                    //TOPagina pagina = (TOPagina)toPaginacao.getPaging().get(0);
-
-                    //txtTotal.setText(String.valueOf(pagina.getTotal()));
+                    txtTotal.setText(String.valueOf(toPaginacao.getTotal()));
 
                 }
 

@@ -41,8 +41,12 @@ public class PaginacaoTask extends AsyncTask<String, Void, TOPaginacao> {
 
 
             j = new JSONObject(result);
+            JSONObject paging = j.getJSONObject("paging");
 
-            t = TOPaginacao.createByJson(result, TOPaginacao.class);
+            t = new TOPaginacao();
+            t.setLimit(paging.getInt("limit"));
+            t.setTotal(paging.getInt("total"));
+            t.setOffset(paging.getInt("offset"));
 
         } catch (Exception e) {
             t = null;
