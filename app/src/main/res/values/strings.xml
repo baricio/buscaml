@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">Busca Mercado Livre</string>
 
-    <string name="developer">Baricio Software</string>
+    <string name="developer">Fabrício Software</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_splash">SplashActivity</string>
+
+    <string name="buscar">Buscar</string>
+    <string name="informeBuscar">Informe o produto que deseja</string>
+    <string name="total">Total encontrado:</string>
 </resources>
