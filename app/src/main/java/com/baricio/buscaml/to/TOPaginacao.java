@@ -1,5 +1,9 @@
 package com.baricio.buscaml.to;
 
+import android.util.Log;
+
+import org.json.JSONObject;
+
 import java.util.List;
 
 /**
@@ -7,9 +11,32 @@ import java.util.List;
  */
 public class TOPaginacao extends TOBase{
 
+    private JSONObject result;
+    private JSONObject paging;
     private int total;
     private int offset;
     private int limit;
+
+
+    public TOPaginacao(){
+
+    }
+
+    public TOPaginacao(JSONObject result){
+        this.result = result;
+        getData();
+    }
+
+    private void getData(){
+        try {
+            JSONObject paging = this.result.getJSONObject("paging");
+            setLimit(paging.getInt("limit"));
+            setTotal(paging.getInt("total"));
+            setOffset(paging.getInt("offset"));
+        }catch (Exception e){
+            Log.e("TOPaginacao",e.getMessage());
+        }
+    }
 
     public int getTotal() {
         return total;

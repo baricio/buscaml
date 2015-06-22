@@ -8,7 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.baricio.buscaml.fw.CreateTO;
 import com.baricio.buscaml.task.PaginacaoTask;
+import com.baricio.buscaml.task.ResultTask;
 import com.baricio.buscaml.to.TOPaginacao;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -40,14 +42,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         pd.setMessage("Carregando...");
         pd.show();
 
-        PaginacaoTask pt = new PaginacaoTask(editBusca.getText().toString()) {
+        txtTotal.setText(String.valueOf(0));
+        ResultTask pt = new ResultTask(editBusca.getText().toString()) {
             @Override
-            protected void onPostExecute(TOPaginacao toPaginacao) {
+            protected void onPostExecute(String result) {
 
                 pd.hide();
 
-                if (toPaginacao != null) {
+                if (result != null) {
 
+                    TOPaginacao toPaginacao = CreateTO.getTOPaginacao(result);
                     txtTotal.setText(String.valueOf(toPaginacao.getTotal()));
 
                 }
