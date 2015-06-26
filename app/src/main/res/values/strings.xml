@@ -6,6 +6,6 @@
     <string name="title_activity_splash">SplashActivity</string>
 
     <string name="buscar">Buscar</string>
-    <string name="informeBuscar">Informe o produto que deseja</string>
+    <string name="hintBuscar">Informe o produto que deseja</string>
     <string name="total">Total encontrado:</string>
 </resources>
