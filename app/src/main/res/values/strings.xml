@@ -8,4 +8,7 @@
     <string name="buscar">Buscar</string>
     <string name="hintBuscar">Informe o produto que deseja</string>
     <string name="total">Total encontrado:</string>
+    <string name="title_activity_produto">ProdutoActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>

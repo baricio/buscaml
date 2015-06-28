@@ -5,17 +5,11 @@ import android.os.AsyncTask;
 import com.baricio.buscaml.fw.Constant;
 import com.baricio.buscaml.fw.Util;
 import com.baricio.buscaml.to.TOArmazem;
-import com.baricio.buscaml.to.TOBase;
-import com.baricio.buscaml.to.TOPaginacao;
-
-import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Fabricio on 21/06/2015.

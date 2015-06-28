@@ -1,25 +1,23 @@
 package com.baricio.buscaml;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.widget.Button;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.baricio.buscaml.adapter.ProdutoAdapter;
-import com.baricio.buscaml.fw.CreateTO;
 import com.baricio.buscaml.task.ArmazemTask;
-import com.baricio.buscaml.task.PaginacaoTask;
-import com.baricio.buscaml.task.ResultTask;
 import com.baricio.buscaml.to.TOArmazem;
-import com.baricio.buscaml.to.TOPaginacao;
+import com.baricio.buscaml.to.TOProduto;
 
-public class MainActivity extends AppCompatActivity implements TextView.OnEditorActionListener {
+public class MainActivity extends AppCompatActivity implements TextView.OnEditorActionListener, AdapterView.OnItemClickListener {
 
     private EditText editBusca;
     private ListView listaProdutos;
@@ -35,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements TextView.OnEditor
         editBusca.setOnEditorActionListener(this);
         editBusca.setFocusableInTouchMode(true);
         editBusca.requestFocus();
+        listaProdutos.setOnItemClickListener(this);
     }
 
     public void obterArmazem() {
@@ -71,5 +70,13 @@ public class MainActivity extends AppCompatActivity implements TextView.OnEditor
         }
 
         return handled;
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        TOProduto produto = (TOProduto) listaProdutos.getItemAtPosition(position);
+        Intent intent = new Intent(MainActivity.this, ProdutoActivity.class);
+        intent.putExtra("link",produto.getPermalink());
+        startActivity(intent);
     }
 }
